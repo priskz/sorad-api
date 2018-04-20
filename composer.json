@@ -1,0 +1,21 @@
+{
+    "name": "priskz/sorad-api",
+    "description": "A service oriented API built around the Responder-Action-Domain pattern.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Zachary Prisk",
+          "email": "zachary.prisk@gmail.com"
+        }
+    ],
+    "require": {
+        "priskz/payload": "~0.0.1",
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Priskz\\SORAD\\": "src/Priskz/SORAD"
+        }
+    }
+}
