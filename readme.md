@@ -14,7 +14,7 @@ Add the following to your "require" schema:
 }
 ```
 
-Run: ```composer update```
+Run: ```composer install```
 
 Add ```'SORAD\Laravel\APIServiceProvider'``` to the ```'providers'``` in ```/app/laravel/config/app.php``` to enable the newly added service.
 
