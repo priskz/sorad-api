@@ -9,7 +9,7 @@ abstract class AbstractAction extends GenericAbstractAction
 	public function __construct(ProcessorInterface $processor = null)
 	{
 		// If a custom processor is not given then use the default generic Laravel\Processor.
-		if ($processor === null)
+		if($processor === null)
 		{
 			$processor = App::make('Priskz\SORAD\Action\Processor\Laravel\Processor');
 		}

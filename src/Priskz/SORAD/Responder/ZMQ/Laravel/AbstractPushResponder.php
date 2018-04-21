@@ -84,7 +84,7 @@ abstract class AbstractPushResponder implements PushResponderInterface
 		
 		$requestParamData = Route::getCurrentRoute()->parametersWithoutNulls();
 
-		if ($requestParamData)
+		if($requestParamData)
 		{
 			$requestData = array_merge($requestData, $requestParamData);
 		}

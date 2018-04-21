@@ -41,7 +41,7 @@ class Validator implements ValidatorInterface
 		$validator = $this->validationFactory->make($data, $rules, $messages);
 
 		// Return the errors, if any.
-		if ($validator->fails())
+		if($validator->fails())
 		{
 			return new Payload($validator->messages(), 'invalid');
 		}

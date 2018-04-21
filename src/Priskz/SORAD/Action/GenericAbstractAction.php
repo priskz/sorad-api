@@ -37,7 +37,7 @@ abstract class GenericAbstractAction
 		$payload = $this->processor->processActionData($requestData, $this->getDataKeys(), $this->getRules());
 
 		// Verify that the data has been sanitized and validated.
-		if ($payload->getStatus() != 'valid')
+		if($payload->getStatus() != 'valid')
 		{
 			return $payload;
 		}
