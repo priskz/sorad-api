@@ -23,6 +23,7 @@ abstract class AbstractResponder implements ResponderInterface
 		Payload::STATUS_CREATED   => self::HTTP_OK,
 		Payload::STATUS_UPDATED   => self::HTTP_OK,
 		Payload::STATUS_DELETED   => self::HTTP_OK,
+		Payload::STATUS_FOUND     => self::HTTP_OK,
 		Payload::STATUS_INVALID   => self::HTTP_BAD_REQUEST,
 		Payload::STATUS_NOT_FOUND => self::HTTP_NOT_FOUND,
 		Payload::STATUS_EXCEPTION => self::HTTP_INTERNAL_SERVER_ERROR
@@ -84,9 +85,6 @@ abstract class AbstractResponder implements ResponderInterface
 	public function __construct($action = null)
 	{
 		$this->action = $action;
-
-		// Merge default status mappings with configured status.
-		$this->status = array_merge(self::DEFAULT_STATUS, $this->status);
 	}
 
 	/**
@@ -180,12 +178,12 @@ abstract class AbstractResponder implements ResponderInterface
 		try
 		{
 			// Check if a result status is configured.
-			if( ! array_key_exists($this->result->getStatus(), $this->status))
+			if( ! array_key_exists($this->result->getStatus(), $this->getStatus()))
 			{
 				throw new MisconfiguredStatusException();
 			}
 
-			return $this->status[$this->result->getStatus()];
+			return $this->getStatus()[$this->result->getStatus()];
 		}
 		catch(MisconfiguredStatusException $e)
 		{
@@ -227,6 +225,14 @@ abstract class AbstractResponder implements ResponderInterface
 	protected function setBody()
 	{
 		$this->body = $this->result->getData();
+	}
+
+	/**
+	 * Get configured status mappings.
+	 */
+	protected function getStatus()
+	{
+		return array_merge(self::DEFAULT_STATUS, $this->status);
 	}
 
 	/**
