@@ -224,7 +224,7 @@ abstract class AbstractResponder implements ResponderInterface
 	 */
 	protected function setBody()
 	{
-		$this->body = $this->result->getData();
+		$this->body = $this->result;
 	}
 
 	/**
