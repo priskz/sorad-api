@@ -1,4 +1,6 @@
-<?php namespace Priskz\SORAD\Action\Processor\Laravel;
+<?php
+
+namespace Priskz\SORAD\Action\Processor\Laravel;
 
 /**
  * A Sanitizer is a simple class used to sanitize data before

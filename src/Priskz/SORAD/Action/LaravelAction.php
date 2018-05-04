@@ -1,10 +1,12 @@
-<?php namespace Priskz\SORAD\Action\Laravel;
+<?php
+
+namespace Priskz\SORAD\Action;
 
 use App;
 use Priskz\SORAD\Action\GenericAbstractAction;
 use Priskz\SORAD\Action\Processor\ProcessorInterface;
 
-abstract class AbstractAction extends GenericAbstractAction
+class LaravelAction extends GenericAbstractAction
 {
 	public function __construct(ProcessorInterface $processor = null)
 	{

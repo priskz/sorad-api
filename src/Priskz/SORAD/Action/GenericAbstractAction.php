@@ -1,24 +1,22 @@
-<?php namespace Priskz\SORAD\Action;
+<?php
+
+namespace Priskz\SORAD\Action;
 
 use Priskz\Payload\Payload;
+use Priskz\SORAD\Action\ActionInterface;
 use Priskz\SORAD\Action\Processor\ProcessorInterface;
 
-abstract class GenericAbstractAction
+class GenericAbstractAction implements ActionInterface
 {
 	/**
-	 * @var  RAD\ActionProcessor Data Processor
+	 * @var  
 	 */
 	protected $processor;
 
 	/**
-	 * @var  array 	Keys accepted by this action
+	 * @var  array  Data configuration.
 	 */
-	protected $dataKeys;
-
-	/**
-	 * @var  array 	Rules for any data.
-	 */
-	protected $rules;
+	protected $config = [];
 
 	/**
 	 *	Constructor
@@ -29,47 +27,13 @@ abstract class GenericAbstractAction
 	}
 
 	/**
-	 *	Main Method
+	 * Run this action's implemented logic.
+	 *
+	 * @return array
 	 */
-	public function __invoke($requestData)
+	public function execute($data)
 	{
 		// Process the incoming data AKA Sanitize && Validate.
-		$payload = $this->processor->processActionData($requestData, $this->getDataKeys(), $this->getRules());
-
-		// Verify that the data has been sanitized and validated.
-		if($payload->getStatus() != 'valid')
-		{
-			return $payload;
-		}
-
-		// Execute the action.
-		$this->execute($payload->getData());
-	}
-
-	/**
-	 * Do/perform this action with the data once it has been succesfully processed.
-	 *
-	 * @return array
-	 */
-	abstract protected function execute($data);
-
-	/**
-	 * Get this Action's data keys.
-	 *
-	 * @return array
-	 */
-	public function getDataKeys()
-	{
-		return $this->dataKeys;
-	}
-
-	/**
-	 * Get this Action's rules.
-	 *
-	 * @return array
-	 */
-	public function getRules()
-	{
-		return $this->rules;
+		return $this->processor->process($data, $this->config);
 	}
 }

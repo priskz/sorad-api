@@ -1,4 +1,6 @@
-<?php namespace Priskz\SORAD\Action\Processor\Laravel;
+<?php
+
+namespace Priskz\SORAD\Action\Processor\Laravel;
 
 use Priskz\Payload\Payload;
 use Priskz\SORAD\Action\Processor\GenericProcessor;

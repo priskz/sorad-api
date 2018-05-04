@@ -1,4 +1,6 @@
-<?php namespace Priskz\SORAD\Responder;
+<?php
+
+namespace Priskz\SORAD\Responder;
 
 use Priskz\SORAD\RespondeResponderInterface;
 

@@ -1,4 +1,6 @@
-<?php namespace Priskz\SORAD\Action\Processor;
+<?php
+
+namespace Priskz\SORAD\Action\Processor;
 
 use Priskz\SORAD\Action\ValidatorInterface;
 
@@ -11,9 +13,8 @@ interface ProcessorInterface
 	 * Process the given data against the given rules and useable data keys.
 	 *
 	 * @param  array  $data
-	 * @param  array  $dataKeys
-	 * @param  array  $rules
+	 * @param  array  $config
 	 * @return Payload
 	 */
-	public function process(array $data, array $dataKeys, array $rules);
+	public function process(array $data, array $config);
 }

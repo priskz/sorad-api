@@ -1,12 +1,8 @@
-<?php namespace Priskz\SORAD\Laravel;
+<?php
+
+namespace Priskz\SORAD\Laravel;
 
 use Config;
-
-// @todo: Discovery & Remove
-// 
-// use Illuminate\Support\Facades\Config;
-// use Illuminate\Support\Facades\Route;
-// use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class APIServiceProvider extends \Illuminate\Support\ServiceProvider
 {

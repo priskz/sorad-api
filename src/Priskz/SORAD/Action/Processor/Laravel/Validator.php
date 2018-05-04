@@ -1,6 +1,7 @@
-<?php namespace Priskz\SORAD\Action\Processor\Laravel;
+<?php
 
-use App;
+namespace Priskz\SORAD\Action\Processor\Laravel;
+
 use Priskz\Payload\Payload;
 use Illuminate\Validation\Factory;
 use Priskz\SORAD\Action\Processor\ValidatorInterface;
@@ -48,21 +49,4 @@ class Validator implements ValidatorInterface
 
 		return new Payload($data, 'valid');
 	}
-	
-	// @todo: This may no longer be needed as of a Laravel 5.x update.
-	// 
-	// /**
-	//  * Set this Laravel Valdiator's verifier connection
-	//  *
-	//  * @param  string  $connection Name of DB connection.
-	//  * @return void
-	//  */
-	// public function setConnection($connection)
-	// {
-	// 	// Create a new instance of the presence verifier. 
-	// 	$verifier = App::make('validation.presence');
-
-	// 	// Set the connection on the verifier.
-	// 	$verifier->setConnection($connection);
-	// }
 }

@@ -1,4 +1,6 @@
-<?php namespace Priskz\SORAD\Responder\ZMQ\Laravel;
+<?php
+
+namespace Priskz\SORAD\Responder\ZMQ\Laravel;
 
 use Input, Route;
 use Priskz\SORAD\Responder\PushResponderInterface;
@@ -42,7 +44,7 @@ abstract class AbstractPushResponder implements PushResponderInterface
 	public function __invoke()
 	{
 		// Get this request's data.
-		$requestData = $this->getRequestData();
+		$requestData = $this->parseRequest();
 
 		// Perform this responder's action.
 		if(isset($this->action))
@@ -69,7 +71,7 @@ abstract class AbstractPushResponder implements PushResponderInterface
 	 *  Note: This method assumes AJAX and other JSON
 	 *  data will be in the request data as 'json'.
 	 */
-	public function getRequestData()
+	public function parseRequest()
 	{
 		$requestData = Input::all();
 
