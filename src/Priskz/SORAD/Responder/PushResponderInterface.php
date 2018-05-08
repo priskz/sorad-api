@@ -11,8 +11,7 @@ interface PushResponderInterface extends ResponderInterface
 {
 	/**
 	 *	Push a message to a subscription socket.
-	 *	@param $string $message json
 	 *	@return void
 	 */
-	public function push($message);
+	public function push();
 }

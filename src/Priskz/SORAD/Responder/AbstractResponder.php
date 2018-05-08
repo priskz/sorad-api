@@ -6,7 +6,6 @@ use Exception;
 use Priskz\Payload\Payload;
 use Priskz\SORAD\Action\ActionInterface;
 use Priskz\SORAD\Exception\MisconfiguredStatusException;
-use Priskz\SORAD\Responder\ResponderInterface;
 
 /**
  * Class AbstractResponder.
