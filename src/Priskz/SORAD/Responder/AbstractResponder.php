@@ -23,9 +23,9 @@ abstract class AbstractResponder implements ResponderInterface
 		Payload::STATUS_UPDATED   => self::HTTP_OK,
 		Payload::STATUS_DELETED   => self::HTTP_OK,
 		Payload::STATUS_FOUND     => self::HTTP_OK,
-		Payload::STATUS_INVALID   => self::HTTP_BAD_REQUEST,
+		Payload::STATUS_INVALID   => self::HTTP_UNPROCESSABLE_ENTITY,
 		Payload::STATUS_NOT_FOUND => self::HTTP_NOT_FOUND,
-		Payload::STATUS_EXCEPTION => self::HTTP_INTERNAL_SERVER_ERROR
+		Payload::STATUS_EXCEPTION => self::HTTP_UNPROCESSABLE_ENTITY
 	];
 
 	/**
