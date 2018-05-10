@@ -33,7 +33,6 @@ class GenericAbstractAction implements ActionInterface
 	 */
 	public function execute($data)
 	{
-		// Process the incoming data AKA Sanitize && Validate.
 		return $this->processor->process($data, $this->getConfig());
 	}
 
