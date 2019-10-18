@@ -132,14 +132,14 @@ abstract class AbstractResponder implements ResponderInterface
 
 	/**
 	 * Parse Request data based on implementation.
-	 * 
+	 *
 	 * @return void
 	 */
 	abstract public function parseRequest();
 
 	/**
 	 * Build Response based on implementation.
-	 * 
+	 *
 	 * @return void
 	 */
 	abstract public function buildResponse();
@@ -241,13 +241,13 @@ abstract class AbstractResponder implements ResponderInterface
 	{
 		if(array_key_exists('api_context', $this->request))
 		{
-			$this->apiContext = $this->request['api_context'];	
+			$this->apiContext = $this->request['api_context'];
 		}
 	}
 
 	/**
 	 *	Get API Context
-	 *	
+	 *
 	 *  @param  $string $prefix Format string for view string.
 	 *  @return string
 	 */
@@ -269,10 +269,10 @@ abstract class AbstractResponder implements ResponderInterface
 		$genericApiContext = implode('/', $apiContextExplode);
 
 		if($prefix)
-		{	
+		{
 			return $genericApiContext . '/';
 		}
 
-		return $this->apiContext;	
+		return $this->apiContext;
 	}
 }

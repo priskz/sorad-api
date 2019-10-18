@@ -48,7 +48,7 @@ abstract class LaravelResponder extends AbstractResponder implements ResponderIn
 
 	/**
 	 *	Get API Context
-	 *	
+	 *
 	 *  @param  $string $prefix Format string for view string.
 	 *  @return string
 	 */
@@ -70,10 +70,10 @@ abstract class LaravelResponder extends AbstractResponder implements ResponderIn
 		$genericApiContext = implode('/', $apiContextExplode);
 
 		if($prefix)
-		{	
+		{
 			return $genericApiContext . '/';
 		}
 
-		return $this->apiContext;	
+		return $this->apiContext;
 	}
 }
