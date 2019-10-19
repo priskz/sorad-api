@@ -2,7 +2,7 @@
 
 namespace Priskz\SORAD\Responder;
 
-use Input, Route;
+use Route;
 use Priskz\Payload\Payload;
 use Priskz\SORAD\Responder\AbstractResponder;
 use Priskz\SORAD\Responder\ResponderInterface;
@@ -34,7 +34,8 @@ abstract class LaravelResponder extends AbstractResponder implements ResponderIn
 	 */
 	public function parseRequest()
 	{
-		$this->request = Input::all();
+		// Get request input via helper.
+		$this->request = request()->input();
 
 		$uri = Route::getCurrentRoute()->parametersWithoutNulls();
 
